@@ -13,7 +13,7 @@ Variables
   --mainBackground: #f1f5f8;
   --mainOverlay: rgba(35, 10, 36, 0.4);
   --mainBlack: #222;
-  --mainGrey: #ececec;
+  --mainGrey: rgb(248, 249, 250);
   --darkGrey: #afafaf;
   --mainRed: #bd0303;
   --mainTransition: all 0.3s linear;
@@ -21,7 +21,7 @@ Variables
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --mainBorderRadius: 0.25rem;
-  --smallWidth: 85vw;
+  --smallWidth: 90vw;
   --maxWidth: 40rem;
   --fullWidth: 1170px;
 }
@@ -68,13 +68,13 @@ h2 {
   font-size: 2rem;
 }
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 h4 {
   font-size: 0.875rem;
 }
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 1.25rem;
   color: var(--mainBlack);
 }
@@ -86,7 +86,7 @@ p {
     font-size: 2.5rem;
   }
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
   }
   h4 {
     font-size: 1rem;
@@ -170,6 +170,10 @@ Hero
   text-align: center;
 }
 
+.hero-container p {
+  font-size: 1.2rem;
+}
+
 button {
   text-transform: capitalize;
   border: none;
@@ -186,4 +190,82 @@ button {
 
 button:hover {
   background: var(--primaryLightColor);
+}
+
+/* 
+====== 
+Cards
+======
+*/
+.wrapper {
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: var(--smallWidth);
+  max-width: var(--fullWidth);
+  display: grid;
+  row-gap: 3rem;
+}
+
+.card-container {
+  background: var(--mainGrey);
+  border-radius: var(--mainBorderRadius);
+  padding: 4rem 1rem 1rem 1rem;
+  text-align: center;
+  position: relative;
+  height: auto;
+}
+
+.icon-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--mainBorderRadius);
+  height: 4rem;
+  width: 4rem;
+  padding: 0.5rem;
+  display: inline-block;
+  font-size: 2rem;
+  color: var(--mainWhite);
+  background: var(--primaryColor);
+  display: grid;
+  place-items: center;
+}
+
+/* 
+====== 
+Footer
+======
+*/
+footer {
+  background: var(--mainBlack);
+  margin-top: 3rem;
+  height: 5rem;
+  color: var(--mainWhite);
+  display: grid;
+  place-items: center;
+}
+
+/* 
+====== 
+Responsive
+======
+*/
+
+@media screen and (min-width: 992px) {
+  .hero-container {
+    width: 80vw;
+  }
+  .wrapper {
+    width: 80vw;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1399px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
 }
